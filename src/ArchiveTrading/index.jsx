@@ -7,7 +7,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { format } from "date-fns";
-import styles from './index.module.css'
 
 export function ArchiveTrading(props) {
   return (
@@ -26,9 +25,10 @@ export function ArchiveTrading(props) {
           {props.deals.map((deal, index) => (
             <TableRow key={index}>
               <TableCell
-                className={
-                  deal.type === "Buy" ? styles.actionGreen : styles.actionRed
-                }>
+                sx={{
+                  color: deal.type === "Buy" ? "green" : "red",
+                }}
+              >
                 {deal.type}
               </TableCell>
               <TableCell>

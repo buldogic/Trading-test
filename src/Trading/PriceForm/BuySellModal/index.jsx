@@ -79,7 +79,7 @@ export function BuySellModal(props) {
             />
           </div>
           <div>
-            <Button onClick={props.handleBuyClose}>Cancel</Button>
+            <Button onClick={props.handleClose}>Cancel</Button>
             <Button onClick={createDeal}>OK</Button>
           </div>
         </Box>

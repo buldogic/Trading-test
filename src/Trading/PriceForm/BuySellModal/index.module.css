@@ -1,0 +1,17 @@
+
+.volume {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0px;
+}
+.action{
+  font-size: 20px;
+}
+.actionGreen {
+  color: green;
+  
+}
+.actionRed {
+  color: red;
+  
+}

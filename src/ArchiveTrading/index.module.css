@@ -1,0 +1,10 @@
+.archiveTrading{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 1000px;
+    border-bottom: 1px solid black;
+}
+

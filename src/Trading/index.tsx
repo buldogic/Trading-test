@@ -4,7 +4,7 @@ import SelectCoin from "./SelectCoin";
 import { Time } from "./Time";
 import { PriceForm } from "./PriceForm";
 import { getRandomPrice } from "./utils/getRandomPrice";
-// import style from "./index.module.css";
+import { AddDeal } from "../types";
 
 const getPairs = () => {
   return [
@@ -35,7 +35,12 @@ const getPairs = () => {
   ];
 };
 
-export function Trading(props) {
+type Props ={
+  addDeal: AddDeal
+}
+
+
+export function Trading(props : Props) {
   const [pairs, setPairs] = React.useState(getPairs);
   const [selectedPairId, setSelectedPairId] = React.useState(pairs[0].id);
 

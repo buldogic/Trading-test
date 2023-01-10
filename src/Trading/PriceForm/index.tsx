@@ -1,9 +1,17 @@
 import * as React from "react";
+import { AddDeal, Pair } from "../../types";
 import { BuySellModal } from "./BuySellModal";
 
 import style from "./index.module.css";
 
-export function PriceForm(props) {
+type Props = {
+  pair: Pair;
+  addDeal: AddDeal;
+  price1: Pair["price1"];
+  price2: Pair["price2"];
+};
+
+export function PriceForm(props: Props) {
   const [isOpenBuyModal, setIsOpenBuyModal] = React.useState(false);
   const [isOpenSellModal, setIsOpenSellModal] = React.useState(false);
 

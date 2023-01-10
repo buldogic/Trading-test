@@ -2,6 +2,7 @@ import * as React from "react";
 import { Box, Typography, Modal, Button, TextField } from "@mui/material";
 import cn from "classnames";
 import styles from "./index.module.css";
+import { AddDeal, Pair } from "../../../types";
 
 const style = {
   position: "absolute",
@@ -15,15 +16,20 @@ const style = {
   p: 4,
 };
 
-export function BuySellModal(props) {
+type HandleClose = () => void;
+
+type Props = {
+  pair: Pair;
+  type: string;
+  modal: boolean;
+  handleClose: HandleClose;
+  addDeal: AddDeal;
+};
+
+export function BuySellModal(props: Props) {
   const { pair } = props;
   const [value, setValue] = React.useState("");
   const [isError, setIsError] = React.useState(false);
-
-  function valueBuyPrice(e) {
-    setValue(e.target.value);
-    setIsError(false);
-  }
 
   const createDeal = () => {
     if (value === "") {
@@ -75,7 +81,13 @@ export function BuySellModal(props) {
               label="Volume"
               variant="outlined"
               value={value}
-              onChange={valueBuyPrice}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (typeof value === "string") {
+                  setValue(value);
+                  setIsError(false);
+                }
+              }}
             />
           </div>
           <div>
